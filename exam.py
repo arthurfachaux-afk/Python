@@ -1,6 +1,35 @@
-num1=int(input("Enter a first number:"))
-num2=int(input("Enter a second number:"))
-choice=int(input("To choose a type of calculation, type 1 for multiplication, 2 for division, 3 for substraction, and 4 for addition:"))
+num1=''
+num2=''
+choice=''
+
+while not isinstance(num1, int):
+    try:
+        num1=int(input("Enter a first number:"))
+    except:
+        ValueError
+        print("Invalid, please enter a NUMBER !")
+
+while not isinstance(num2, int):
+    try:
+        num2=int(input("Enter a second number:"))
+    except:
+        ValueError
+        print("Invalid, please enter a NUMBER !")
+
+
+while not isinstance(choice, int):
+    try:
+        choice=int(input("To choose a type of calculation, type 1 for multiplication, 2 for division, 3 for substraction, and 4 for addition:"))
+        if choice>4:
+            print("Invalid, enter 1, 2, 3 or 4")
+            choice='invalid'
+        elif choice<1:
+            print("Invalid, enter 1, 2, 3 or 4")
+            choice='incorrect'        
+    except:
+        ValueError
+        print("Invalid, enter 1, 2, 3 or 4")
+
 match choice:
     case 1: #multiplication
         print(num1,"*",num2,"=",num1*num2)
@@ -12,7 +41,7 @@ match choice:
             for b in range (21):
                 print(num2,"*",b,"=",num2*b)
         else:
-            print("Ok enjoy your day.3")
+            print("Ok enjoy your day.")
 
     case 2: #division
         print(num1,"/",num2,"=",num1/num2)
