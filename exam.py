@@ -20,7 +20,7 @@ while not isinstance(number2, int):
 while not isinstance(choice, int):
     try:
         choice = int(input(
-            "To choose a type of calculation, type 1 for multiplication, 2 for division, 3 for substraction, and 4 for addition:"))
+            "To choose a type of calculation, type 1 for multiplication, 2 for division, 3 for subtraction, and 4 for addition:"))
         if choice > 4:
             print("Invalid, enter 1, 2, 3 or 4")
             choice = 'invalid'
