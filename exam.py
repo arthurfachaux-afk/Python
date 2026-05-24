@@ -1,17 +1,17 @@
-num1=''
-num2=''
+number1=''
+number2=''
 choice=''
 
-while not isinstance(num1, int):
+while not isinstance(number1, int):
     try:
-        num1=int(input("Enter a first number:"))
+        number1=int(input("Enter a first number:"))
     except:
         ValueError
         print("Invalid, please enter a NUMBER !")
 
-while not isinstance(num2, int):
+while not isinstance(number2, int):
     try:
-        num2=int(input("Enter a second number:"))
+        number2=int(input("Enter a second number:"))
     except:
         ValueError
         print("Invalid, please enter a NUMBER !")
@@ -32,32 +32,37 @@ while not isinstance(choice, int):
 
 match choice:
     case 1: #multiplication
-        print(num1,"*",num2,"=",num1*num2)
+        print(number1, "*", number2, "=", number1*number2)
         question=input("Do you want the multiplication table of the two numbers you chosed ? (Answer by 'yes' or 'no')")
         if question=="yes":
             for a in range (21):
-                print(num1,"*",a,"=",num1*a)
+                print(number1, "*", a, "=", number1*a)
             print()
             for b in range (21):
-                print(num2,"*",b,"=",num2*b)
+                print(number2, "*", b, "=",number2*b)
         else:
             print("Ok enjoy your day.")
 
     case 2: #division
-        print(num1,"/",num2,"=",num1/num2)
+        try: #handle division by zero
+            print(number1,"/",number2,"=",number1/number2)
+        except:
+            ZeroDivisionError
+            print("Impossible to devide by zero")
+
         question2=input("Do you want the division table of the two numbers you chosed ? (Answer by 'yes' or 'no')")
         if question2=="yes":
-            for y in range (21):
-                print(num1,"/",y,"=",num1/y) #handle division by zero
+            for y in range (1, 21):
+                print(number1,"/",y,"=",number1/y) 
                 print()
-            for z in range (21):
-                print(num2,"/",z,"=",num2/z)
+            for z in range (1, 21):
+                print(number2,"/",z,"=",number2/z)
         else:
             print("Ok have a good day")
             
         
     case 3: #substraction
-        print(num1,"-",num2,"=",num1-num2)
+        print(number1,"-",number2,"=",number1-number2)
 
     case 4: #addition
-        print(num1,"+",num2,"=",num1+num2)
+        print(number1,"+",number2,"=",number1+number2)
